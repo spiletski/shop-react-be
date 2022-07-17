@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getProductsList handler if error should return response 500 response 1`] = `
+Object {
+  "body": "{\\"products\\":{\\"code\\":500,\\"message\\":\\"Internal server error\\"}}",
+  "headers": Object {
+    "Access-Control-Allow-Credentials": true,
+    "Access-Control-Allow-Methods": "OPTIONS,GET",
+    "Access-Control-Allow-Origin": "*",
+    "content-type": "application/json",
+  },
+  "statusCode": 200,
+}
+`;
+
+exports[`getProductsList handler if error should return response 500 response: getProductsList error 1`] = `
+Object {
+  "body": "{\\"products\\":{\\"code\\":500,\\"message\\":\\"Internal server error\\"}}",
+  "headers": Object {
+    "Access-Control-Allow-Credentials": true,
+    "Access-Control-Allow-Methods": "OPTIONS,GET",
+    "Access-Control-Allow-Origin": "*",
+    "content-type": "application/json",
+  },
+  "statusCode": 200,
+}
+`;
