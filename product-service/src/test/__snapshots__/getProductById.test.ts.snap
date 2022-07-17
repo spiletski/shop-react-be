@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getProductById handler product not found 1`] = `
+Object {
+  "body": "{\\"error\\":\\"Auto with aaa-123 not found\\"}",
+  "headers": Object {
+    "Access-Control-Allow-Credentials": true,
+    "Access-Control-Allow-Methods": "OPTIONS,GET",
+    "Access-Control-Allow-Origin": "*",
+    "content-type": "application/json",
+  },
+  "statusCode": 404,
+}
+`;
+
+exports[`getProductById handler verifies successful response 1`] = `"{\\"auto\\":{\\"id\\":\\"aaa\\",\\"Name\\":\\"chevrolet camaro\\",\\"Miles_per_Gallon\\":27,\\"Cylinders\\":4,\\"Displacement\\":151,\\"Horsepower\\":90,\\"Weight_in_lbs\\":2950,\\"Acceleration\\":17.3,\\"Year\\":\\"1982-01-01\\",\\"Origin\\":\\"USA\\"}}"`;
+
+exports[`getProductByIdt handler if error should return response 500 response 1`] = `
+Object {
+  "body": "{\\"error\\":\\"Auto with aaa-123 not found\\"}",
+  "headers": Object {
+    "Access-Control-Allow-Credentials": true,
+    "Access-Control-Allow-Methods": "OPTIONS,GET",
+    "Access-Control-Allow-Origin": "*",
+    "content-type": "application/json",
+  },
+  "statusCode": 404,
+}
+`;
+
+exports[`getProductByIdt handler product not found 1`] = `
+Object {
+  "body": "{\\"error\\":\\"Auto with aaa-123 not found\\"}",
+  "headers": Object {
+    "Access-Control-Allow-Credentials": true,
+    "Access-Control-Allow-Methods": "OPTIONS,GET",
+    "Access-Control-Allow-Origin": "*",
+    "content-type": "application/json",
+  },
+  "statusCode": 404,
+}
+`;
+
+exports[`getProductByIdt handler verifies successful response 1`] = `"{\\"auto\\":{\\"id\\":\\"aaa\\",\\"Name\\":\\"chevrolet camaro\\",\\"Miles_per_Gallon\\":27,\\"Cylinders\\":4,\\"Displacement\\":151,\\"Horsepower\\":90,\\"Weight_in_lbs\\":2950,\\"Acceleration\\":17.3,\\"Year\\":\\"1982-01-01\\",\\"Origin\\":\\"USA\\"}}"`;
