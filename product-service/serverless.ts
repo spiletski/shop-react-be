@@ -2,15 +2,18 @@ import type {AWS} from '@serverless/typescript';
 
 import getProductsList from '@functions/getProductsList';
 import getProductById from "@functions/getProductById";
+import createProduct from "@functions/createProduct";
 
 const serverlessConfiguration: AWS = {
-    service: 'product-service',
+    service: 'product-service-task-4',
     frameworkVersion: '3',
-    plugins: ['serverless-auto-swagger', 'serverless-esbuild'], // , 'serverless-offline', 'serverless-webpack'],
+    useDotenv: true,
+    plugins: [ 'serverless-dotenv-plugin', 'serverless-webpack', 'serverless-offline'],
     provider: {
         name: 'aws',
         runtime: 'nodejs14.x',
         region: 'us-east-1',
+        stage: 'dev',
         apiGateway: {
             minimumCompressionSize: 1024,
             shouldStartNameWithService: true,
@@ -21,33 +24,12 @@ const serverlessConfiguration: AWS = {
         },
     },
     // import the function via paths
-    functions: {getProductsList, getProductById},
+    functions: {getProductsList, getProductById, createProduct},
     package: {individually: true},
     custom: {
-        esbuild: {
-            bundle: true,
-            minify: false,
-            sourcemap: true,
-            exclude: ['aws-sdk'],
-            target: 'node14',
-            define: {'require.resolve': undefined},
-            platform: 'node',
-            concurrency: 10,
-        },
-        autoswagger: {
-            // generateSwaggerOnDeploy: false,
-            title: 'Products Service',
-            typefiles: ['./src/services/products.d.ts'],
-            host: 'my8qpq3fv2.execute-api.us-east-1.amazonaws.com/dev',
-            schemes: ['https'],
-            useStage: true,
-        },
-        'serverless-offline': {
-            httpPort: 4000
-        },
         webpack: {
             webpackConfig: "webpack.config.js",
-            includeModules: false,
+            includeModules: true,
             packager: "yarn",
             excludeFiles: "src/**/*.test.js",
         },
