@@ -9,7 +9,7 @@ export const formatJSONResponse = (statusCode: number = 200, response: Record<st
     headers: {
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Credentials": true,
-      "Access-Control-Allow-Methods": "OPTIONS,GET",
+      "Access-Control-Allow-Methods": "OPTIONS,GET,POST,DELETE",
       "content-type": "application/json"
     },
     statusCode: statusCode,

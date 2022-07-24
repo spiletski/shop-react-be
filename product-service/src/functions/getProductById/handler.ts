@@ -4,6 +4,7 @@ import ProductService from '../../services/productService';
 import {APIGatewayProxyEvent, APIGatewayProxyResult} from "aws-lambda";
 
 export const getProductById = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
+    console.log(' getProductById ', event.pathParameters, event);
     const { productId } = event.pathParameters;
 
     if (!productId) return formatJSONResponse(400, { error: "Please provide auto id"})
@@ -15,6 +16,7 @@ export const getProductById = async (event: APIGatewayProxyEvent): Promise<APIGa
 
         return formatJSONResponse(200, { auto });
     } catch (e) {
+        console.log(' getProductById ', e);
         return formatJSONResponse(500, { error: e });
     }
 };
